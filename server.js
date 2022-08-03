@@ -12,7 +12,10 @@ app.use(express.json());
 app.get("/comics", async (req, res) => {
   const apikey = process.env.API_KEY;
   const url = `https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=${apikey}`;
-
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://laetitia-marvel-project.netlify.app/"
+  );
   try {
     const response = await axios.get(url);
     res.status(200).json(response.data);
