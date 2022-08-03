@@ -1,10 +1,8 @@
 const express = require("express");
 const app = express();
-const mongoose = require("mongoose");
+
 require("dotenv").config();
 const axios = require("axios");
-
-mongoose.connect(process.env.MONGODB_URI);
 
 app.use(express.json());
 //récupérer la liste des comics dans l'API MARVEL
@@ -25,6 +23,6 @@ app.all("*", function (req, res) {
   res.status(400).json({ message: "Page not found" });
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log("Server started");
 });
