@@ -9,7 +9,7 @@ const axios = require("axios");
 app.use(express.json());
 //récupérer la liste des comics dans l'API MARVEL
 
-app.get("/comics", cors(corsOptions), async (req, res) => {
+app.get("/comics", async (req, res) => {
   const apikey = process.env.API_KEY;
   const url = `https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=${apikey}`;
 
