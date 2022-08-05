@@ -1,3 +1,7 @@
+const mongoose = require("mongoose");
+
 const CharacterId = mongoose.model("CharacterId", {
-  charcterId: String,
+  characterId: String,
 });
+
+module.exports = CharacterId;
