@@ -39,11 +39,11 @@ app.get("/characters", async (req, res) => {
   }
 });
 
-// Route contenant les infos sur un personnage par Id
+// Route contenant les infos d'un personnage
 
-// app.get("/characters/:characterId", async (req, res) => {
+// app.get("/character/:id", async (req, res) => {
 //   try {
-//     const url = `https://lereacteur-marvel-api.herokuapp.com/character/${req.params.characterId}?apiKey=${apikey}`;
+//     const url = `https://lereacteur-marvel-api.herokuapp.com/character/${req.params.id}?apiKey=${apikey}`;
 //     const response = await axios.get(url);
 //     res.status(200).json(response.data);
 //     console.log(req.params);
@@ -54,9 +54,9 @@ app.get("/characters", async (req, res) => {
 
 // Route contenant les comics d'un personnage
 
-app.get("/character/:id", async (req, res) => {
+app.get("/comic/:id", async (req, res) => {
   try {
-    const url = `https://lereacteur-marvel-api.herokuapp.com/character/${req.params.id}?apiKey=${apikey}`;
+    const url = `https://lereacteur-marvel-api.herokuapp.com/comics/${req.params.id}?apiKey=${apikey}`;
     const response = await axios.get(url);
     res.status(200).json(response.data);
     console.log(req.params);
